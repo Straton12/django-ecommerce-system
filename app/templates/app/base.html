@@ -13,43 +13,62 @@
 
   <!--Owl Carousel CSS-->
   <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  {% comment %} favicon {% endcomment %}
+  <link rel="icon" type="image/x-icon" href="..\static\images\banner\marketo.jpg">
 
   <!--FontAwesome CSS-->
   <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
 
   <!--Custom CSS-->
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    
+    <!-- Bootstrap -->
+  <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
+    
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href={% static "css/font-awesome.min.css" %}>
+    
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href={% static "css/owl.carousel.css" %}>
+  <link rel="stylesheet" href={% static "style.css" %}>
+  <link rel="stylesheet" href={% static "css/responsive.css" %}>
 
 
-  <title>Sheashell | {% block title %} {% endblock title %} </title>
+
+  <title>Marketo Official Website | {% block title %} {% endblock title %} </title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient bg-dark">
-    <div class="container">
-      <a class="navbar-brand font-italic font-weight-bold" href="/"><span id="brand-name" class="font-italic font-weight-bold pe-5"
-        style="color: rgba(255,226,0,1)">Seashell</span></a>
+  <div><img src="..\static\images\banner\kilimall.gif" style="width: 100%; height: 40px;"></div>
+  {% comment %} navbar-expand-lg bg-body-tertiary navbar-dark bg-gradient {% endcomment %}
+  <nav class="navbar bg-info navbar-expand-lg " style="margin: 0px; width: 100%; height: 70px;">
+    <div class="container p-1" id="navbarSupportedContent" style="width: 100px; margin-left: 50px;">
+      <a class="navbar-brand font-italic font-weight-bold" style="margin-bottom: -30px; font-size: 40px;" href="/"><span id="brand-name" class="font-italic font-weight-bold pe-1"
+        style="color: rgba(255,226,0,1)">Marketo</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-0" style="padding: 10px; word-spacing: 25px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="btn btn-outline-dark nav-link dropdown-toggle text-white" aria-current="page" href="/" style="margin-top: 30px; ">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="electronicsDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="btn btn-outline-dark nav-link dropdown-toggle text-white" href="#" id="electronicsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 30px;">
               Electronics
             </a>
             <ul class="dropdown-menu" aria-labelledby="electronicsDropdown">
-              <li><a class="dropdown-item" href="{% url 'mobile' %}">Mobile</a></li>
-              <li><a class="dropdown-item" href="{% url 'laptop' %}">Laptop</a></li>
+              <li><a class="btn btn-outline-dark dropdown-item" href="{% url 'mobile' %}">Mobile</a></li>
+              <li><a class="btn btn-outline-dark dropdown-item" href="{% url 'laptop' %}">Laptop</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button"
+          <li class="nav-item dropdown" style="margin-top: 30px;">
+            <a class="btn btn-outline-dark nav-link dropdown-toggle text-white " href="#" id="fashionDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Fashion
             </a>
@@ -60,7 +79,7 @@
         </ul>
         
         <div>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 900px; margin-top: -60px; text-align: justify;">
             {% if request.user.is_authenticated %}
             <li class="nav-item dropdown mx-2">
               <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button"
@@ -68,7 +87,7 @@
                 {{request.user.username|title}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="dropdown-item"  href="{% url 'profile' %}" >Profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
@@ -97,10 +116,86 @@
   {% block payment-gateway %} {% endblock payment-gateway %}
 
   <!-- Start Footer -->
-  <footer class="container-fluid bg-dark text-center p-2 mt-5">
-    <small class="text-white">Copyright &copy; 2021 || Designed By GeekyShows || </small>
-    <img src="{% static 'images/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
-  </footer> <!-- End Footer -->
+  <footer >
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>M<span>arketo</span></h2>
+                        <p>Our e-commerce platform is here to revolutionize your shopping journey. Whether you're on the hunt for cutting-edge tech gadgets, the latest fashion trends, or essential electronics, we have got it all. We are not just an ordinary online store; we are your digital shopping haven.</p>
+                        <div class="footer-social">
+                          <a target = "blank" href = 'https://www.youtube.com/channel/UC-gCUMK_EGUqJ7P9VA7BJmQ'><i class="fab fa-youtube"></i></a>
+                          <a target = "blank" href='https://twitter.com/codingCommander' ><i class="fab fa-twitter"></i></a>
+                          <a target = "blank" href='https://www.facebook.com/codingcommanders/'><i class='fab fa-facebook'></i></a>
+                          <a target = "blank" href='https://www.instagram.com/codingcommanders'><i class='fab fa-instagram'></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">User Navigation </h2>
+                        <ul>
+                            <li><a href="#">My account</a></li>
+                            <li><a href="#">Order history</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Vendor contact</a></li>
+                            <li><a href="#">Front page</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Categories</h2>
+                        <ul>
+                            <li><a href="#">Mobile</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Bottom Wear</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Newsletter</h2>
+                        <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Type your email">
+                                <input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+    
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p>&copy; 2023 eCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">stratonDesignersWeb.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                      <a target = "blank" href = 'https://www.youtube.com/channel/UC-gCUMK_EGUqJ7P9VA7BJmQ'><i class="fab fa-youtube"></i></a>
+                      <a target = "blank" href='https://twitter.com/home?lang=en' ><i class="fab fa-twitter"></i></a>
+                      <a target = "blank" href='https://www.facebook.com/codingcommanders/'><i class='fab fa-facebook'></i></a>
+                      <a target = "blank" href='https://www.instagram.com/codingcommanders'><i class='fab fa-instagram'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer bottom area -->
+</footer>
+<!-- End Footer -->
 
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -113,6 +208,27 @@
   <script src="{% static 'js/owl.carousel.min.js' %}"></script>
   <script src="{% static 'js/all.min.js' %}"></script>
   <script src="{% static 'js/myscript.js' %}"></script>
+  <!-- Latest jQuery form server -->
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+  <!-- Bootstrap JS form CDN -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+  <!-- jQuery sticky menu -->
+  <script src={% static "js/owl.carousel.min.js" %}></script>
+  <script src={% static "js/jquery.sticky.js" %}></script>
+  
+  <!-- jQuery easing -->
+  <script src={% static "js/jquery.easing.1.3.min.js" %}></script>
+  
+  <!-- Main Script -->
+  <script src={% static "js/main.js" %}></script>
+  
+  <!-- Slider -->
+  <script type="text/javascript" src={% static "js/bxslider.min.js" %}></script>
+  <script type="text/javascript" src={% static "js/script.slider.js" %}></script>
+  
+
 </body>
 
 </html>
