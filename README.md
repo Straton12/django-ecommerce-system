@@ -53,7 +53,7 @@ This project is a Django-based ecommerce platform designed to provide a robust a
 To set up the Django Ecommerce project, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/yourusername/django-ecommerce.git cd django-ecommerce
+https://github.com/Straton12/django-ecommerce-system cd django-ecommerce
 
 
 2. Install Python dependencies:
